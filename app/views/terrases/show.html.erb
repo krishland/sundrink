@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @terrase.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @terrase.address %>
+</p>
+
+<%= link_to 'Edit', edit_terrase_path(@terrase) %> |
+<%= link_to 'Back', terrases_path %>

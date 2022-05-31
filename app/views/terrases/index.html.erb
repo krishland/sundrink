@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Terrases</h1>
+<div style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @terrases.each do |terrase| %>
+      <tr>
+        <td><%= terrase.name %></td>
+        <td><%= terrase.address %></td>
+        <td><%= link_to 'Show', terrase %></td>
+        <td><%= link_to 'Edit', edit_terrase_path(terrase) %></td>
+        <td><%= link_to 'Destroy', terrase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Terrase', new_terrase_path %>
